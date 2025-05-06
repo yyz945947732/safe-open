@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import safeOpen from '../src/index';
 
 const HTTP_URL = 'http://www.google.com/';
@@ -31,6 +31,13 @@ describe('safeOpen', () => {
     mockProtocol('https:');
     safeOpen(HTTP_URL);
     expect(window.open).toHaveBeenCalledWith(HTTPS_URL, '_blank', undefined);
+  });
+
+  it('should return undefined if url is not string', () => {
+    expect(safeOpen('')).toBe(undefined);
+    expect(safeOpen(undefined)).toBe(undefined);
+    // @ts-expect-error
+    expect(safeOpen(39)).toBe(undefined);
   });
 
   it('should keep original http when current page is http', () => {
