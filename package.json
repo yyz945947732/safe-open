@@ -40,7 +40,10 @@
     "@vitest/coverage-istanbul": "^3.0.9",
     "tsup": "^8.4.0",
     "typescript": "^5.8.2",
-    "vitest": "^3.0.9"
+    "vitest": "^3.0.9",
+    "bumpp": "^10.1.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.1"
   },
   "keywords": [
     "open-url",
@@ -56,10 +59,5 @@
       "biome check --write",
       "biome format --write"
     ]
-  },
-  "dependencies": {
-    "bumpp": "^10.1.0",
-    "husky": "^9.1.7",
-    "lint-staged": "^15.5.1"
   }
 }
