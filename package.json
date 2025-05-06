@@ -1,6 +1,6 @@
 {
   "name": "safe-open",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A small utility to safely open URLs, upgrading http to https when necessary.",
   "homepage": "https://github.com/yyz945947732/safe-open",
   "main": "dist/index.cjs",
