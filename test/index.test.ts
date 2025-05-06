@@ -33,11 +33,11 @@ describe('safeOpen', () => {
     expect(window.open).toHaveBeenCalledWith(HTTPS_URL, '_blank', undefined);
   });
 
-  it('should return undefined if url is not string', () => {
-    expect(safeOpen('')).toBe(undefined);
-    expect(safeOpen(undefined)).toBe(undefined);
+  it('should return null if url is not string', () => {
+    expect(safeOpen('')).toBe(null);
+    expect(safeOpen(undefined)).toBe(null);
     // @ts-expect-error
-    expect(safeOpen(39)).toBe(undefined);
+    expect(safeOpen(39)).toBe(null);
   });
 
   it('should keep original http when current page is http', () => {
