@@ -11,25 +11,20 @@ export default function safeOpen(
   target = '_blank',
   features?: string,
 ): WindowProxy | null | undefined {
-  if (typeof window === 'undefined') {
-    console.warn('`safe-open` can only be used in a browser environment.');
+  /* istanbul ignore if -- @preserve */
+  if (typeof window === 'undefined' || typeof window.open !== 'function') {
     return;
   }
   if (!url || typeof url !== 'string') {
     return;
   }
-  try {
-    const currentProtocol = window.location.protocol;
-    const isHttps = currentProtocol === 'https:';
+  const currentProtocol = window.location.protocol;
+  const isHttps = currentProtocol === 'https:';
 
-    const normalizedUrl =
-      isHttps && url.startsWith('http://')
-        ? url.replace(/^http:/, 'https:')
-        : url;
+  const normalizedUrl =
+    isHttps && url.startsWith('http://')
+      ? url.replace(/^http:/, 'https:')
+      : url;
 
-    return window.open(normalizedUrl, target, features);
-  } catch (e) {
-    console.error('Failed to open the URL:', e);
-    return;
-  }
+  return window.open(normalizedUrl, target, features);
 }

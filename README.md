@@ -1,6 +1,8 @@
 # safe-open
 
-A small utility to safely open URLs, upgrading `http` to `https` when necessary.
+> A small utility to safely open URLs, upgrading `http` to `https` when necessary.
+
+This is meant to be used in browser, not in the node environment.
 
 <p>
   <a href="https://www.npmjs.com/package/safe-open">
@@ -25,6 +27,10 @@ A small utility to safely open URLs, upgrading `http` to `https` when necessary.
     />
   </a>
 </p>
+
+## Why?
+
+Modern browsers may block `http://` URLs when opened from an `https://` page due to mixed content restrictions. `s​afe-open` ensure `http://` URLs are automatically upgraded to `https://` when the current page uses HTTPS.
 
 ## Install
 
@@ -52,7 +58,7 @@ open('http://www.google.com');
 open('http://www.google.com', '_self');
 
 // Specify window features
-open("http://www.google.com", "mozillaWindow", "popup");
+open('http://www.google.com', 'mozillaWindow', 'popup');
 ```
 
 ## API
