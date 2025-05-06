@@ -1,0 +1,65 @@
+{
+  "name": "safe-open",
+  "version": "1.0.0",
+  "description": "A small utility to safely open URLs, upgrading http to https when necessary.",
+  "homepage": "https://github.com/yyz945947732/safe-open",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "test": "vitest",
+    "lint": "biome check --apply-unsafe ./src && biome format --write ./src",
+    "build": "tsup --config tsup.config.ts",
+    "test:cov": "vitest run --coverage",
+    "release": "bumpp",
+    "prepublishOnly": "tsup",
+    "prepare": "husky"
+  },
+  "type": "module",
+  "author": "yyz945947732 <945947732@qq.com>",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "bugs": {
+    "url": "https://github.com/yyz945947732/safe-open/issues",
+    "email": "945947732@qq.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yyz945947732/safe-open.git"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@vitest/coverage-istanbul": "^3.0.9",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.9"
+  },
+  "keywords": [
+    "open-url",
+    "open",
+    "opener",
+    "opens",
+    "url",
+    "urls"
+  ],
+  "packageManager": "pnpm@10.5.2",
+  "lint-staged": {
+    "{src,test}/**/*.ts": [
+      "biome check --write",
+      "biome format --write"
+    ]
+  },
+  "dependencies": {
+    "bumpp": "^10.1.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.1"
+  }
+}
