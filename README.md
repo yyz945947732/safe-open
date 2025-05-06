@@ -30,9 +30,13 @@ A small utility to safely open URLs, upgrading `http` to `https` when necessary.
 
 ```bash
 npm install safe-open
-# or
+```
+
+```bash
 yarn add safe-open
-# or
+```
+
+```bash
 pnpm install safe-open
 ```
 
@@ -60,8 +64,8 @@ This function follows the same signature as [window.open](https://developer.mozi
 #### Parameters
 
 - `url` _(string)_ – The URL to open. If the page is HTTPS and the URL starts with `http://`, it will be automatically converted to `https://`.
-- `target` _(string, optional)_ – Specifies where to open the URL (`_blank`, `_self`, etc.).
-- `features` _(string, optional)_ – Additional window features such as size or position.
+- `target` _(string)_ – Specifies where to open the URL (`_blank`, `_self`, etc.).
+- `features` _(string)_ – Additional window features such as size or position.
 
 ## LICENSE
 
