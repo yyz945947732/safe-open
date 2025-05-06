@@ -32,6 +32,8 @@ This is meant to be used in browser, not in the node environment.
 
 Modern browsers may block `http://` URLs when opened from an `https://` page due to mixed content restrictions. `s​afe-open` ensure `http://` URLs are automatically upgraded to `https://` when the current page uses HTTPS.
 
+**Note:** This requires the original URL itself to support HTTPS.
+
 ## Install
 
 ```bash
